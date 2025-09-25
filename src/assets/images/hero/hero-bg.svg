@@ -1,0 +1,54 @@
+<!-- filepath: /c:/Users/skumari/OneDrive - Hexagon/Attachments/Project Satelite/hertz-app-website/src/assets/images/hero/hero-bg.svg -->
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Dark space background -->
+    <rect width="1920" height="1080" fill="#050914"/>
+    
+    <!-- Stars -->
+    <g opacity="0.8">
+      <circle cx="200" cy="300" r="1" fill="white"/>
+      <circle cx="400" cy="200" r="1.5" fill="white"/>
+      <circle cx="600" cy="400" r="1" fill="white"/>
+      <circle cx="800" cy="200" r="1" fill="white"/>
+      <circle cx="1000" cy="500" r="1.5" fill="white"/>
+      <circle cx="1200" cy="300" r="1" fill="white"/>
+      <circle cx="1400" cy="200" r="1" fill="white"/>
+      <circle cx="1600" cy="400" r="1.5" fill="white"/>
+      <circle cx="1800" cy="500" r="1" fill="white"/>
+      <circle cx="100" cy="100" r="1" fill="white"/>
+      <circle cx="300" cy="500" r="1.5" fill="white"/>
+      <circle cx="500" cy="100" r="1" fill="white"/>
+      <circle cx="700" cy="600" r="1" fill="white"/>
+      <circle cx="900" cy="300" r="1.5" fill="white"/>
+      <circle cx="1100" cy="100" r="1" fill="white"/>
+      <circle cx="1300" cy="600" r="1.5" fill="white"/>
+      <circle cx="1500" cy="300" r="1" fill="white"/>
+      <circle cx="1700" cy="100" r="1" fill="white"/>
+      <circle cx="1900" cy="600" r="1.5" fill="white"/>
+      <!-- More stars in random positions -->
+      <circle cx="250" cy="450" r="1" fill="white"/>
+      <circle cx="450" cy="350" r="1" fill="white"/>
+      <circle cx="650" cy="550" r="1.5" fill="white"/>
+      <circle cx="850" cy="350" r="1" fill="white"/>
+      <circle cx="1050" cy="650" r="1" fill="white"/>
+      <circle cx="1250" cy="450" r="1.5" fill="white"/>
+      <circle cx="1450" cy="350" r="1" fill="white"/>
+      <circle cx="1650" cy="550" r="1" fill="white"/>
+      <circle cx="1850" cy="650" r="1.5" fill="white"/>
+    </g>
+    
+    <!-- Nebula effects -->
+    <ellipse cx="500" cy="400" rx="400" ry="300" fill="url(#paint0_radial)" opacity="0.2"/>
+    <ellipse cx="1400" cy="600" rx="500" ry="400" fill="url(#paint1_radial)" opacity="0.15"/>
+    
+    <!-- Gradient definitions -->
+    <defs>
+      <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(500 400) rotate(90) scale(300 400)">
+        <stop offset="0" stop-color="#0984e3"/>
+        <stop offset="1" stop-color="#050914" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1400 600) rotate(90) scale(400 500)">
+        <stop offset="0" stop-color="#00cec9"/>
+        <stop offset="1" stop-color="#050914" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+  </svg>

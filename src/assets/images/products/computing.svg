@@ -1,0 +1,32 @@
+<!-- filepath: /c:/Users/skumari/OneDrive - Hexagon/Attachments/Project Satelite/hertz-app-website/src/assets/images/products/computing.svg -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#0F172A"/>
+    
+    <!-- Computer outline -->
+    <rect x="120" y="80" width="160" height="100" rx="5" fill="#0984e3" opacity="0.8"/>
+    <rect x="140" y="100" width="120" height="60" fill="#000"/>
+    
+    <!-- Screen content -->
+    <rect x="150" y="110" width="100" height="10" rx="2" fill="#00cec9" opacity="0.8"/>
+    <rect x="150" y="130" width="60" height="5" rx="2" fill="#74b9ff" opacity="0.7"/>
+    <rect x="150" y="145" width="80" height="5" rx="2" fill="#74b9ff" opacity="0.7"/>
+    
+    <!-- Computer stand -->
+    <rect x="175" y="180" width="50" height="10" fill="#0984e3" opacity="0.8"/>
+    <rect x="185" y="190" width="30" height="20" fill="#0984e3" opacity="0.8"/>
+    
+    <!-- Base -->
+    <rect x="165" y="210" width="70" height="10" rx="5" fill="#0984e3" opacity="0.8"/>
+    
+    <!-- Circuitry background elements -->
+    <line x1="50" y1="240" x2="350" y2="240" stroke="#74b9ff" stroke-width="1" opacity="0.3"/>
+    <line x1="80" y1="260" x2="320" y2="260" stroke="#74b9ff" stroke-width="1" opacity="0.3"/>
+    <line x1="120" y1="220" x2="120" y2="280" stroke="#74b9ff" stroke-width="1" opacity="0.3"/>
+    <line x1="280" y1="220" x2="280" y2="280" stroke="#74b9ff" stroke-width="1" opacity="0.3"/>
+    
+    <circle cx="120" cy="240" r="5" fill="#00cec9" opacity="0.5"/>
+    <circle cx="280" cy="240" r="5" fill="#00cec9" opacity="0.5"/>
+    <circle cx="200" cy="260" r="5" fill="#00cec9" opacity="0.5"/>
+    
+    <text x="200" y="290" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Computing Device</text>
+  </svg>

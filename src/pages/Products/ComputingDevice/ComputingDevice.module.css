@@ -1,0 +1,74 @@
+.computing-device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.computing-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.computing-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.computing-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.device-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.device-visual {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.device-body {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.device-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.device-info h2 {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.device-tagline {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.key-features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.specs-section {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}

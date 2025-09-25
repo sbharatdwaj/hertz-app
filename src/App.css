@@ -1,0 +1,42 @@
+/* App.css */
+
+/* Global styles for the App component */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer {
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main-content {
+    padding: 20px 0;
+}

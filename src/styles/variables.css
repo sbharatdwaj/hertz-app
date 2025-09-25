@@ -1,0 +1,13 @@
+:root {
+  --primary-color: #1a1a1a; /* Dark color for primary elements */
+  --secondary-color: #ffffff; /* White color for text and backgrounds */
+  --accent-color: #ffcc00; /* Accent color for buttons and highlights */
+  --border-radius: 8px; /* Standard border radius for rounded elements */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Standard box shadow */
+  --font-family: 'Raleway', sans-serif; /* Main font family */
+  --font-size-base: 16px; /* Base font size */
+  --font-size-lg: 1.25rem; /* Large font size */
+  --font-size-sm: 0.875rem; /* Small font size */
+  --line-height: 1.5; /* Standard line height */
+  --transition: all 0.3s ease; /* Standard transition for animations */
+}

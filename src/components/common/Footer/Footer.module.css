@@ -1,0 +1,24 @@
+.footer-container {
+  position: relative;
+  background: #000; /* Matches the header and main content */
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0;
+  padding: 1rem 0;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  margin: 0;
+}

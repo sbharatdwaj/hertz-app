@@ -1,0 +1,112 @@
+.satellitePage {
+    background: linear-gradient(to bottom, #050914, #0F172A);
+    color: white;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, #74b9ff, #00cec9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .productOverview {
+    background-color: rgba(30, 41, 59, 0.4);
+  }
+  
+  .techSpecsSection {
+    background-color: rgba(15, 23, 42, 0.8);
+  }
+  
+  .featuresSection {
+    background-color: rgba(30, 41, 59, 0.4);
+  }
+  
+  .featuresList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgba(15, 23, 42, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .featureItem:hover {
+    border-color: rgba(116, 185, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .featureIcon {
+    margin-right: 0.75rem;
+    color: #74b9ff;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+  .ctaSection {
+    background: linear-gradient(to right, rgba(9, 132, 227, 0.1), rgba(0, 206, 201, 0.1));
+  }
+  
+  .ctaContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(116, 185, 255, 0.2);
+  }
+  
+  .ctaContainer h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .ctaContainer p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+  }
+  
+  .ctaButton {
+    background: linear-gradient(to right, #0984e3, #00b894);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background: linear-gradient(to right, #0876c8, #00a382);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .featuresList {
+      grid-template-columns: 1fr;
+    }
+    
+    .sectionTitle {
+      font-size: 1.75rem;
+    }
+    
+    .ctaContainer h2 {
+      font-size: 1.5rem;
+    }
+  }

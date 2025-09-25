@@ -1,0 +1,736 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.highlight {
+  background: linear-gradient(to right, #74b9ff, #00cec9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100%; /* Ensure it takes full width */
+}
+
+/* Full-width video background */
+.heroVideoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Set a higher z-index than the old background, but lower than content */
+}
+
+.heroVideoBackground video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Video overlay for better text contrast */
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 9, 20, 0.7) 0%,
+    rgba(15, 23, 42, 0.6) 50%,
+    rgba(5, 9, 20, 0.8) 100%
+  );
+  z-index: 3; /* Set a z-index higher than the video itself */
+}
+
+/* Circuit board background - keep as backup/additional layer */
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* This should be behind the video elements */
+  overflow: hidden;
+  background-color: #050914;
+}
+
+.boardImage {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  z-index: 1;
+  transform-origin: center;
+  background: radial-gradient(circle at center, rgba(9, 132, 227, 0.03) 0%, rgba(5, 9, 20, 0) 70%);
+}
+
+/* Circuit board elements */
+.circuitLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(116, 185, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(116, 185, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 96%, rgba(0, 206, 201, 0.1) 97%, transparent 98%),
+    linear-gradient(-45deg, transparent 96%, rgba(0, 206, 201, 0.1) 97%, transparent 98%);
+  background-size: 50px 50px, 50px 50px, 100px 100px, 100px 100px;
+  background-position: center center;
+  z-index: 1;
+}
+
+.circuitNodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 50px 50px, rgba(116, 185, 255, 0.1) 2px, transparent 3px);
+  background-size: 50px 50px;
+  background-position: center center;
+  z-index: 2;
+}
+
+.chipElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.chipElements:before, .chipElements:after {
+  content: "";
+  position: absolute;
+  background: rgba(9, 132, 227, 0.05);
+}
+
+.chipElements:before {
+  top: 10%;
+  left: 30%;
+  width: 40%;
+  height: 25%;
+  border: 1px solid rgba(116, 185, 255, 0.1);
+  border-radius: 5px;
+}
+
+.chipElements:after {
+  bottom: 20%;
+  right: 35%;
+  width: 30%;
+  height: 20%;
+  border: 1px solid rgba(0, 206, 201, 0.1);
+  border-radius: 5px;
+}
+
+/* Overlay and grid pattern */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(5, 9, 20, 0.9), rgba(5, 9, 20, 0.85));
+  z-index: 4;
+}
+
+.gridPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(116, 185, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(116, 185, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 5;
+}
+
+/* Background particles */
+.backgroundParticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 4; /* particles should be above the video overlay */
+  pointer-events: none;
+}
+
+.bgParticle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* Hero content styles - now centered and full width */
+.heroContent {
+  position: relative;
+  z-index: 10; /* Keep this high so content is always on top */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  min-height: 100vh;
+}
+
+/* Hero text styles - centered layout */
+.heroText {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroText h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: white;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.3;
+  margin-top: 0.5rem;
+}
+
+.heroDescription {
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.heroDescription p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: linear-gradient(to right, #0984e3, #00b894);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+  font-size: 1.1rem;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(9, 132, 227, 0.4);
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(116, 185, 255, 0.7);
+  transform: translateY(-3px);
+}
+
+/* Remove hero visual styles as we're using full-width video now */
+.heroVisual {
+  display: none;
+}
+
+/* Keep floating elements for potential future use */
+.floatingDevice {
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+
+.deviceImage {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(9, 132, 227, 0.3));
+}
+
+.deviceGlow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at center, rgba(116, 185, 255, 0.2) 0%, rgba(9, 132, 227, 0) 70%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+.floatingElement {
+  position: absolute;
+  filter: drop-shadow(0 0 5px rgba(116, 185, 255, 0.5));
+}
+
+.element1 {
+  top: 20%;
+  left: 10%;
+}
+
+.element2 {
+  bottom: 25%;
+  right: 15%;
+}
+
+.element3 {
+  top: 60%;
+  left: 15%;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  z-index: 15; /* Ensure scroll indicator is on top */
+}
+
+.scrollIcon {
+  margin-top: 0.5rem;
+}
+
+/* Products Section */
+.productsSection {
+  padding: 100px 0;
+  background-color: #050914;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.productCard {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.productImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.productGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(116, 185, 255, 0.2), transparent 70%);
+  z-index: 1;
+}
+
+.productCard h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.productCard p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.productLink {
+  display: flex;
+  align-items: center;
+  color: #74b9ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.productLink svg {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.productLink:hover {
+  color: #0984e3;
+}
+
+.productLink:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* Mission Section */
+.missionSection {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #050914, #0F172A);
+}
+
+.missionCard {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 20px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+}
+
+.missionContent {
+  position: relative;
+  z-index: 2;
+}
+
+.missionCard h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.missionCard p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
+.learnMoreLink {
+  display: inline-flex;
+  align-items: center;
+  color: #74b9ff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.learnMoreLink svg {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.learnMoreLink:hover {
+  color: #0984e3;
+}
+
+.learnMoreLink:hover svg {
+  transform: translateX(3px);
+}
+
+.missionGlow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, rgba(116, 185, 255, 0.15), transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Technology Section */
+.technologySection {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.techBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.techBackground img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.techOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(5, 9, 20, 0.9), rgba(15, 23, 42, 0.95));
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.featureCard p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 100px 0;
+  background: linear-gradient(to right, rgba(9, 132, 227, 0.1), rgba(0, 206, 201, 0.1));
+}
+
+.ctaCard {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.ctaCard h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ctaCard p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.ctaButton {
+  background: linear-gradient(to right, #0984e3, #00b894);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(9, 132, 227, 0.3);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(9, 132, 227, 0.4);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .heroText h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .heroText h1 {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .missionCard {
+    padding: 2rem;
+  }
+  
+  .missionCard h2 {
+    font-size: 2rem;
+  }
+  
+  .ctaCard h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroText h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .heroDescription p {
+    font-size: 1.1rem;
+  }
+  
+  .heroCta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .productsGrid,
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .missionCard h2,
+  .ctaCard h2 {
+    font-size: 1.8rem;
+  }
+  
+  .productsSection,
+  .missionSection,
+  .technologySection,
+  .ctaSection {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroText h1 {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .heroDescription p {
+    font-size: 1rem;
+  }
+  
+  .missionCard {
+    padding: 1.5rem;
+  }
+  
+  .productsSection,
+  .missionSection,
+  .technologySection,
+  .ctaSection {
+    padding: 50px 0;
+  }
+}

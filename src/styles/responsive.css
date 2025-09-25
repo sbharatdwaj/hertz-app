@@ -1,0 +1,84 @@
+/* Responsive Styles */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust base font size for mobile */
+    }
+
+    .header {
+        padding: 10px; /* Reduce padding for header */
+    }
+
+    .footer {
+        padding: 10px; /* Reduce padding for footer */
+    }
+
+    .product-showcase {
+        flex-direction: column; /* Stack products vertically */
+    }
+
+    .card {
+        margin: 10px 0; /* Add margin between cards */
+    }
+
+    .button {
+        width: 100%; /* Full width buttons */
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 16px; /* Adjust base font size for tablets */
+    }
+
+    .header {
+        padding: 15px; /* Adjust padding for header */
+    }
+
+    .footer {
+        padding: 15px; /* Adjust padding for footer */
+    }
+
+    .product-showcase {
+        flex-direction: row; /* Align products in a row */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .card {
+        margin: 15px; /* Add margin between cards */
+    }
+
+    .button {
+        width: auto; /* Auto width buttons */
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px; /* Adjust base font size for desktop */
+    }
+
+    .header {
+        padding: 20px; /* Increase padding for header */
+    }
+
+    .footer {
+        padding: 20px; /* Increase padding for footer */
+    }
+
+    .product-showcase {
+        flex-direction: row; /* Align products in a row */
+        justify-content: space-between; /* Space out products */
+    }
+
+    .card {
+        margin: 20px; /* Add margin between cards */
+    }
+
+    .button {
+        width: auto; /* Auto width buttons */
+    }
+}
