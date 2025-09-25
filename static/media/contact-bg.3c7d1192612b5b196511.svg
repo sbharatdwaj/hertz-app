@@ -1,0 +1,38 @@
+<!-- filepath: /c:/Users/skumari/OneDrive - Hexagon/Attachments/Project Satelite/hertz-app-website/src/assets/images/backgrounds/contact-bg.svg -->
+<svg width="1920" height="400" viewBox="0 0 1920 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Dark background -->
+    <rect width="1920" height="400" fill="#050914"/>
+    
+    <!-- Patterns and elements -->
+    <g opacity="0.1">
+      <!-- Grid pattern -->
+      <line x1="0" y1="80" x2="1920" y2="80" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="0" y1="160" x2="1920" y2="160" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="0" y1="240" x2="1920" y2="240" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="0" y1="320" x2="1920" y2="320" stroke="#74b9ff" stroke-width="1"/>
+      
+      <line x1="240" y1="0" x2="240" y2="400" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="480" y1="0" x2="480" y2="400" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="720" y1="0" x2="720" y2="400" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="960" y1="0" x2="960" y2="400" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="1200" y1="0" x2="1200" y2="400" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="1440" y1="0" x2="1440" y2="400" stroke="#74b9ff" stroke-width="1"/>
+      <line x1="1680" y1="0" x2="1680" y2="400" stroke="#74b9ff" stroke-width="1"/>
+    </g>
+    
+    <!-- Decorative elements -->
+    <circle cx="480" cy="160" r="50" fill="#0984e3" opacity="0.1"/>
+    <circle cx="1440" cy="240" r="80" fill="#00cec9" opacity="0.1"/>
+    
+    <!-- Connection lines -->
+    <g opacity="0.15">
+      <path d="M240 160 L480 160 L720 240 L960 80 L1200 320 L1440 240 L1680 160" stroke="#74b9ff" stroke-width="2" stroke-dasharray="5 5"/>
+      <circle cx="240" cy="160" r="5" fill="#74b9ff"/>
+      <circle cx="480" cy="160" r="5" fill="#74b9ff"/>
+      <circle cx="720" cy="240" r="5" fill="#74b9ff"/>
+      <circle cx="960" cy="80" r="5" fill="#74b9ff"/>
+      <circle cx="1200" cy="320" r="5" fill="#74b9ff"/>
+      <circle cx="1440" cy="240" r="5" fill="#74b9ff"/>
+      <circle cx="1680" cy="160" r="5" fill="#74b9ff"/>
+    </g>
+  </svg>
