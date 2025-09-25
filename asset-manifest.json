@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.6cfe6c70.css",
-    "main.js": "/my-portfolio/static/js/main.f8f7e44e.js",
-    "static/media/home_video.mp4": "/my-portfolio/static/media/home_video.6bd348d32d69d5a37b9e.mp4",
-    "static/media/satellite-hero.png": "/my-portfolio/static/media/satellite-hero.ce49bebb90f28c0be0a7.png",
-    "static/media/board.jpg": "/my-portfolio/static/media/board.32080508548f7875ef8f.jpg",
-    "static/media/logo.png": "/my-portfolio/static/media/logo.4296bf13e3f669e15238.png",
-    "static/media/Sensor.jpg": "/my-portfolio/static/media/Sensor.779b625d59d2877c033f.jpg",
-    "static/media/satellite.png": "/my-portfolio/static/media/satellite.26b6e9c6358ad2145c5d.png",
-    "static/media/contact-bg.svg": "/my-portfolio/static/media/contact-bg.3c7d1192612b5b196511.svg",
-    "static/media/computing.svg": "/my-portfolio/static/media/computing.315349fa69f3483b5ebce79e12a3293b.svg",
-    "index.html": "/my-portfolio/index.html",
-    "main.6cfe6c70.css.map": "/my-portfolio/static/css/main.6cfe6c70.css.map",
-    "main.f8f7e44e.js.map": "/my-portfolio/static/js/main.f8f7e44e.js.map"
+    "main.css": "/hertz.-app/static/css/main.119696ac.css",
+    "main.js": "/hertz.-app/static/js/main.fcbbb1db.js",
+    "static/media/home_video.mp4": "/hertz.-app/static/media/home_video.6bd348d32d69d5a37b9e.mp4",
+    "static/media/satellite-hero.png": "/hertz.-app/static/media/satellite-hero.ce49bebb90f28c0be0a7.png",
+    "static/media/board.jpg": "/hertz.-app/static/media/board.32080508548f7875ef8f.jpg",
+    "static/media/logo.png": "/hertz.-app/static/media/logo.4296bf13e3f669e15238.png",
+    "static/media/Sensor.jpg": "/hertz.-app/static/media/Sensor.779b625d59d2877c033f.jpg",
+    "static/media/satellite.png": "/hertz.-app/static/media/satellite.26b6e9c6358ad2145c5d.png",
+    "static/media/contact-bg.svg": "/hertz.-app/static/media/contact-bg.3c7d1192612b5b196511.svg",
+    "static/media/computing.svg": "/hertz.-app/static/media/computing.315349fa69f3483b5ebce79e12a3293b.svg",
+    "index.html": "/hertz.-app/index.html",
+    "main.119696ac.css.map": "/hertz.-app/static/css/main.119696ac.css.map",
+    "main.fcbbb1db.js.map": "/hertz.-app/static/js/main.fcbbb1db.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cfe6c70.css",
-    "static/js/main.f8f7e44e.js"
+    "static/css/main.119696ac.css",
+    "static/js/main.fcbbb1db.js"
   ]
 }
