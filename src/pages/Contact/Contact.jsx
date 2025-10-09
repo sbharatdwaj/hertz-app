@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Footer from '../../components/common/Footer/Footer';
 import Layout from '../../components/common/Layout/Layout';
 import styles from './Contact.module.css';
 
@@ -245,6 +246,7 @@ const Contact = () => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </Layout>
     );
 };

@@ -15,11 +15,11 @@ body {
 
 a {
     text-decoration: none;
-    color: #007bff;
+    color: #929aab;
 }
 
 a:hover {
-    color: #0056b3;
+    color: #ff7517;
 }
 
 .container {
@@ -43,13 +43,13 @@ a:hover {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #929aab;
     color: white;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #ff7517;
 }
 
 /* Responsive Styles */

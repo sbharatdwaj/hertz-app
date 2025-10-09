@@ -1,24 +1,99 @@
-.footer-container {
+.footer {
+  background-color: #000;
+  color: #adb5bd;
+  padding: 20px 0;
+  font-family: 'Roboto', Arial, sans-serif;
   position: relative;
-  background: #000; /* Matches the header and main content */
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 0;
-  padding: 1rem 0;
-  min-height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.footer-content {
-  max-width: 800px;
-  width: 100%;
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Add an empty space on the left to balance the legal links on the right */
+.leftSpace {
+  flex: 1;
+}
+
+/* Group logo and copyright together */
+.footerLogoGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 2;
+  justify-content: center;
   text-align: center;
 }
 
-.footer-copyright {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
+.footerLogo {
+  display: flex;
+  align-items: center;
+}
+
+.footerLogo img {
+  height: 30px;
+  width: auto;
+}
+
+/* Style for the copyright text */
+.footerLogoGroup p {
   margin: 0;
+  font-size: 14px;
+}
+
+.footerLegal {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.footerLegal a {
+  color: #8b8b8b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 14px;
+}
+
+.footerLegal a:hover {
+  color: #4dabf7;
+}
+
+.divider {
+  color: #444;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footerRow {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+  
+  .leftSpace {
+    display: none;
+  }
+  
+  .footerLogoGroup {
+    flex-direction: column;
+    gap: 10px;
+    order: 1;
+  }
+  
+  .footerLegal {
+    justify-content: center;
+    order: 2;
+  }
 }

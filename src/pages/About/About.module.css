@@ -1,49 +1,398 @@
-.about-container {
-    padding: 2rem;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.about-header {
+/* General Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    margin-bottom: 2rem;
-}
+    font-weight: 600;
+    background: linear-gradient(90deg, #4dabf7, #0288d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Hero Section - Black Background */
+  .heroSection {
+    background-color: #000;
+    color: #fff;
+    padding: 150px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heroSection::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(0, 123, 255, 0.1), transparent 60%);
+    pointer-events: none;
+  }
+  
+  .heroTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #ffffff, #4dabf7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .heroTagline {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    color: #adb5bd;
+  }
+  
+  .missionStatement {
+    background: rgba(13, 17, 23, 0.7);
+    border-left: 4px solid #4dabf7;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .missionContent h2 {
+    color: #4dabf7;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+  }
+  
+  .missionContent p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+  
+  /* Journey Timeline Section - Grey Background */
+  .journeySection {
+    background-color: #121212;
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, transparent, #4dabf7, transparent);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  .timelineItem {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  
+  .timelineItem:nth-child(odd) {
+    left: 0;
+  }
+  
+  .timelineItem:nth-child(even) {
+    left: 50%;
+  }
+  
+  .timelineItem::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: 15px;
+    border-radius: 50%;
+    background: #4dabf7;
+    box-shadow: 0 0 0 4px rgba(77, 171, 247, 0.2);
+    z-index: 1;
+  }
+  
+  .timelineItem:nth-child(even)::after {
+    left: -10px;
+  }
+  
+  .timelineContent {
+    padding: 20px 25px;
+    background: rgba(22, 28, 36, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    color: #e9ecef;
+    border: 1px solid rgba(77, 171, 247, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .timelineContent:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+  
+  .timelineYear {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4dabf7;
+    margin-bottom: 10px;
+  }
+  
+  .timelineContent h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .timelineContent p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #adb5bd;
+  }
+  
+  /* Team Section - Black Background */
+  .teamSection {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .teamSection::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at bottom left, rgba(0, 123, 255, 0.05), transparent 70%);
+    pointer-events: none;
+  }
+  
+  .teamIntro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: #adb5bd;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .teamMember {
+    background: rgba(18, 18, 18, 0.8);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+  }
 
-.about-header h1 {
+  .teamMemberInitial {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4dabf7, #0288d1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2.5rem;
     font-weight: 600;
-}
-
-.about-header p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.about-content h2 {
-    font-size: 2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.about-content ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.about-content li {
-    margin-bottom: 0.5rem;
-}
-
-.about-footer {
-    margin-top: 2rem;
-    text-align: center;
+    color: white;
+    margin: 0 auto 20px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  }
+  
+  .teamMember:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  .teamMemberImageContainer {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .teamMemberImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .teamMember:hover .teamMemberImageContainer img {
+    transform: scale(1.05);
+  }
+  
+  .teamMemberInfo {
+    padding: 0;
+  }
+  
+  .teamMemberInfo h3 {
+    font-size: 1.3rem;
+    margin: 0 0 5px;
+    color: #fff;
+  }
+  
+  .teamMemberInfo h4 {
     font-size: 0.9rem;
-    color: #666;
-}
+    color: #4dabf7;
+    margin: 0 0 15px;
+    font-weight: 500;
+  }
+  
+  .teamMemberInfo p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #adb5bd;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* Values Section */
+  .valuesSection {
+    background-color: #000;
+    background-image: linear-gradient(to bottom, #000000, #060d17);
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .valueCard {
+    background: rgba(18, 24, 32, 0.8);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(77, 171, 247, 0.1);
+  }
+  
+  .valueCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(77, 171, 247, 0.3);
+  }
+  
+  .valueIcon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .valueCard h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #4dabf7;
+  }
+  
+  .valueCard p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #adb5bd;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .heroTitle {
+      font-size: 2.8rem;
+    }
+    
+    .heroTagline {
+      font-size: 1.3rem;
+    }
+    
+    .timeline::after {
+      left: 31px;
+    }
+    
+    .timelineItem {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+    
+    .timelineItem:nth-child(even) {
+      left: 0;
+    }
+    
+    .timelineItem::after {
+      left: 21px;
+      right: auto;
+    }
+    
+    .timelineItem:nth-child(even)::after {
+      left: 21px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroTitle {
+      font-size: 2.2rem;
+    }
+    
+    .heroTagline {
+      font-size: 1.1rem;
+    }
+    
+    .heroSection {
+      padding: 120px 0 70px;
+    }
+    
+    .journeySection,
+    .teamSection,
+    .valuesSection {
+      padding: 70px 0;
+    }
+    
+    .sectionTitle {
+      font-size: 2rem;
+    }
+    
+    .teamGrid,
+    .valuesGrid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heroTitle {
+      font-size: 1.8rem;
+    }
+    
+    .teamGrid,
+    .valuesGrid {
+      grid-template-columns: 1fr;
+    }
+  }

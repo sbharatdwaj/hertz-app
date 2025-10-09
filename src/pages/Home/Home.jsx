@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Layout from '../../components/common/Layout/Layout';
+import Footer from '../../components/common/Footer/Footer';
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 
 // Update these import lines in your Home.jsx file
 import satelliteImg from '../../assets/images/products/satellite.png';
-import sensorImg from '../../assets/images/products/Sensor.jpg';
+import sensorImg from '../../assets/images/products/product4.png';
 import computingImg from '../../assets/images/products/computing.svg'; 
 
 // Add this import for the video
@@ -19,7 +20,6 @@ import boardImage from '../../assets/images/backgrounds/board.jpg';
 const Home = () => {
   // References for parallax effects
   const heroRef = useRef(null);
-  const techRef = useRef(null);
   
   // Scroll progress for parallax
   const { scrollYProgress } = useScroll({
@@ -27,32 +27,23 @@ const Home = () => {
     offset: ["start start", "end start"]
   });
   
-  const { scrollYProgress: techScrollProgress } = useScroll({
-    target: techRef,
-    offset: ["start end", "end start"]
-  });
-  
   // Transform values for parallax
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const boardImageY = useTransform(techScrollProgress, [0, 1], ['0%', '30%']);
   
   // Animation controls for sections
   const productsControls = useAnimation();
   const missionControls = useAnimation();
-  const featuresControls = useAnimation();
   
   // Intersection observers for triggering animations
   const [productsRef, productsInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [missionRef, missionInView] = useInView({ threshold: 0.2, triggerOnce: true });
-  const [featuresRef, featuresInView] = useInView({ threshold: 0.1, triggerOnce: true });
   
   // Trigger animations when sections come into view
   useEffect(() => {
     if (productsInView) productsControls.start('visible');
     if (missionInView) missionControls.start('visible');
-    if (featuresInView) featuresControls.start('visible');
-  }, [productsInView, missionInView, featuresInView, productsControls, missionControls, featuresControls]);
+  }, [productsInView, missionInView, productsControls, missionControls]);
   
   // Products animation variants
   const containerVariants = {
@@ -75,20 +66,6 @@ const Home = () => {
     }
   };
   
-  // Features animation
-  const featureVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: i => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    })
-  };
-  
   // Mission statement animation
   const missionVariants = {
     hidden: { opacity: 0, scale: 0.95 },
@@ -99,39 +76,14 @@ const Home = () => {
     }
   };
 
-  // Features data
-  const features = [
-    {
-      icon: "🛰️",
-      title: "Global Coverage",
-      description: "Our satellite network provides comprehensive coverage across the entire planet."
-    },
-    {
-      icon: "⚡",
-      title: "Real-time Data",
-      description: "Access critical information with minimal latency through our advanced transmission systems."
-    },
-    {
-      icon: "🔋",
-      title: "Energy Efficient",
-      description: "Cutting-edge power management for optimal performance and extended operational life."
-    },
-    {
-      icon: "🔒",
-      title: "Secure Transmission",
-      description: "Enterprise-grade encryption and security protocols protect your sensitive data."
-    },
-    {
-      icon: "💾",
-      title: "Edge Computing",
-      description: "Powerful onboard processing capabilities reduce dependency on ground infrastructure."
-    },
-    {
-      icon: "🔄",
-      title: "Adaptable Systems",
-      description: "Flexible architecture allows for customization to meet specific mission requirements."
-    }
-  ];
+  // Smooth scroll handler
+  const scrollToProducts = (e) => {
+    e.preventDefault();
+    document.getElementById('products')?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
 
   return (
     <Layout>
@@ -237,9 +189,9 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Link to="/products/satellite" className={styles.primaryBtn}>
+              <a href="#products" onClick={scrollToProducts} className={styles.primaryBtn}>
                 Explore Platforms
-              </Link>
+              </a>
               <Link to="/about" className={styles.secondaryBtn}>
                 Our Technology
               </Link>
@@ -267,7 +219,7 @@ const Home = () => {
       </section>
       
       {/* Products Section */}
-      <section className={styles.productsSection} ref={productsRef}>
+      <section id="products" className={styles.productsSection} ref={productsRef}>
         <div className={styles.container}>
           <motion.h2
             className={styles.sectionTitle}
@@ -325,7 +277,7 @@ const Home = () => {
               </div>
               <h3>Sensor Modules</h3>
               <p>Advanced sensing capabilities for data collection in extreme environments</p>
-              <Link to="/products/sensor-module" className={styles.productLink}>
+              <Link to="/products/sense-array" className={styles.productLink}>
                 Explore
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -360,41 +312,8 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Mission Statement Section */}
-      <section className={styles.missionSection} ref={missionRef}>
-        <div className={styles.container}>
-          <motion.div 
-            className={styles.missionCard}
-            variants={missionVariants}
-            initial="hidden"
-            animate={missionControls}
-          >
-            <div className={styles.missionContent}>
-              <h2>Our <span className={styles.highlight}>Mission</span></h2>
-              <p>At OneHertz, we're dedicated to pushing the boundaries of hardware technology. Our mission is to develop innovative solutions that connect the world, enable scientific discovery, and advance human knowledge.</p>
-              <p>Through cutting-edge research and development, we strive to make advanced hardware technology more accessible, efficient, and impactful for organizations around the globe.</p>
-              <Link to="/about" className={styles.learnMoreLink}>
-                Learn more about our story
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-            </div>
-            <div className={styles.missionGlow}></div>
-          </motion.div>
-        </div>
-      </section>
-      
-      {/* Technology Section with Parallax */}
-      <section ref={techRef} className={styles.technologySection}>
-        <motion.div 
-          className={styles.techBackground}
-          style={{ y: boardImageY }}
-        >
-          <img src={boardImage} alt="Technology Background" />
-          <div className={styles.techOverlay}></div>
-        </motion.div>
-        
+      {/* Services Section */}
+      <section className={styles.servicesSection}>
         <div className={styles.container}>
           <motion.h2
             className={styles.sectionTitle}
@@ -403,37 +322,202 @@ const Home = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Advanced <span className={styles.highlight}>Features</span>
+            Our <span className={styles.highlight}>Services</span>
           </motion.h2>
           
-          <motion.div 
-            className={styles.featuresGrid}
-            ref={featuresRef}
-            variants={containerVariants}
-            initial="hidden"
-            animate={featuresControls}
+          <motion.p 
+            className={styles.sectionSubtitle}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
           >
-            {features.map((feature, index) => (
-              <motion.div 
-                key={index}
-                className={styles.featureCard}
-                custom={index}
-                variants={featureVariants}
-                whileHover={{ 
-                  y: -5, 
-                  boxShadow: "0 10px 30px rgba(116, 185, 255, 0.2)",
-                  borderColor: "rgba(116, 185, 255, 0.5)"
-                }}
-              >
-                <div className={styles.featureIcon}>{feature.icon}</div>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </motion.div>
-            ))}
+            End-to-end hardware solutions for your innovative ideas
+          </motion.p>
+          
+          <motion.div 
+            className={styles.servicesGrid}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {/* Custom Design Service */}
+            <motion.div 
+              className={styles.serviceCard}
+              whileHover={{ y: -10, boxShadow: "0 20px 30px rgba(0, 0, 0, 0.2)" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className={styles.serviceCardInner}>
+                <div className={styles.flagshipBadge}>
+                  <span>Flagship</span>
+                </div>
+                <div className={styles.serviceIcon}>
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 8L8 20L32 32L56 20L32 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 44L32 56L56 44" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 32L32 44L56 32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Custom Design</h3>
+                <p>From concept to production, we create tailored hardware solutions that meet your exact specifications and requirements.</p>
+                <ul className={styles.serviceFeatures}>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Requirements analysis & specification
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Hardware architecture design
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Functional prototyping & validation
+                  </li>
+                </ul>
+                <Link to="/services/custom-design" className={styles.serviceLink}>
+                  Learn more
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
+              <div className={styles.serviceGlow}></div>
+            </motion.div>
+            
+            {/* Computing Device Service */}
+            <motion.div 
+              className={styles.serviceCard}
+              whileHover={{ y: -10, boxShadow: "0 20px 30px rgba(0, 0, 0, 0.2)" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35 }}
+              viewport={{ once: true }}
+            >
+              <div className={styles.serviceCardInner}>
+                <div className={styles.flagshipBadge}>
+                  <span>Flagship</span>
+                </div>
+                <div className={styles.serviceIcon}>
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="12" y="12" width="40" height="30" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M12 36H52" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M32 42V48" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M22 48H42" stroke="currentColor" strokeWidth="2"/>
+                    <circle cx="32" cy="24" r="6" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M32 24V20" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M32 24L36 28" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3>Computing Devices</h3>
+                <p>High-performance computing solutions designed for demanding applications in resource-constrained environments.</p>
+                <ul className={styles.serviceFeatures}>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Edge AI processing platforms
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Low-power embedded systems
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Ruggedized industrial computers
+                  </li>
+                </ul>
+                <Link to="/services/computing-devices" className={styles.serviceLink}>
+                  Learn more
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
+              <div className={styles.serviceGlow}></div>
+            </motion.div>
+            
+            {/* PCB Design Service */}
+            <motion.div 
+              className={styles.serviceCard}
+              whileHover={{ y: -10, boxShadow: "0 20px 30px rgba(0, 0, 0, 0.2)" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className={styles.serviceCardInner}>
+                <div className={styles.flagshipBadge}>
+                  <span>Flagship</span>
+                </div>
+                <div className={styles.serviceIcon}>
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="44" height="44" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <circle cx="18" cy="18" r="3" stroke="currentColor" strokeWidth="2"/>
+                    <circle cx="46" cy="18" r="3" stroke="currentColor" strokeWidth="2"/>
+                    <circle cx="18" cy="46" r="3" stroke="currentColor" strokeWidth="2"/>
+                    <circle cx="46" cy="46" r="3" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M18 18L32 32M32 32L46 18M32 32L46 46M32 32L18 46" stroke="currentColor" strokeWidth="2"/>
+                    <circle cx="32" cy="32" r="6" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3>PCB Design</h3>
+                <p>Expert printed circuit board design services, from simple two-layer boards to complex multi-layer solutions.</p>
+                <ul className={styles.serviceFeatures}>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Schematic capture & component selection
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    High-density & high-speed PCB layout
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 10L9 12L13 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    Design for manufacturing & testing
+                  </li>
+                </ul>
+                <Link to="/services/pcb-design" className={styles.serviceLink}>
+                  Learn more
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
+              <div className={styles.serviceGlow}></div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className={styles.ctaSection}>
         <div className={styles.container}>
@@ -457,6 +541,7 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </Layout>
   );
 }

@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
-import logo from '../../../assets/images/logo.png'; // Add your logo file to this path
+import logo from '../../../assets/images/logo.png';
+
+// Import your product images
+import satelliteImg from '../../../assets/images/products/product1.png';
+import sensorImg from '../../../assets/images/products/product2.png';
+import computingImg from '../../../assets/images/products/product3.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -22,14 +26,36 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleProducts = () => {
-    setIsProductsOpen(!isProductsOpen);
-  };
-
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setIsProductsOpen(false);
   };
+
+  const products = [
+    {
+      id: 1,
+      name: 'Satellite',
+      route: '/products/satellite',
+      image: satelliteImg,
+      status: 'Order',
+      hasDocument: true
+    },
+    {
+      id: 2,
+      name: 'Sensor Module',
+      route: '/products/sense-array',
+      image: sensorImg,
+      status: 'Order',
+      hasDocument: true
+    },
+    {
+      id: 3,
+      name: 'Computing Device',
+      route: '/products/computing-device',
+      image: computingImg,
+      status: 'Coming soon',
+      hasDocument: false
+    }
+  ];
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
@@ -48,27 +74,37 @@ const Header = () => {
             <li className={location.pathname === '/about' ? styles.active : ''}>
               <Link to="/about" onClick={closeMenu}>About</Link>
             </li>
-            <li className={`${styles.hasDropdown} ${isProductsOpen ? styles.open : ''}`}>
-              <button 
-                className={`${styles.dropdownToggle} ${location.pathname.includes('/products') ? styles.active : ''}`}
-                onClick={toggleProducts}
-              >
+            <li className={styles.hasDropdown}>
+              <span className={`${styles.dropdownToggle} ${location.pathname.includes('/products') ? styles.active : ''}`}>
                 Products
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <ul className={`${styles.dropdown} ${isProductsOpen ? styles.show : ''}`}>
-                <li className={location.pathname === '/products/satellite' ? styles.active : ''}>
-                  <Link to="/products/satellite" onClick={closeMenu}>Satellite</Link>
-                </li>
-                <li className={location.pathname === '/products/sensor-module' ? styles.active : ''}>
-                  <Link to="/products/sensor-module" onClick={closeMenu}>Sensor Module</Link>
-                </li>
-                <li className={location.pathname === '/products/computing-device' ? styles.active : ''}>
-                  <Link to="/products/computing-device" onClick={closeMenu}>Computing Device</Link>
-                </li>
-              </ul>
+              </span>
+              <div className={styles.megaMenu}>
+                <div className={styles.productsGrid}>
+                  {products.map(product => (
+                    <Link 
+                      key={product.id}
+                      to={product.route}
+                      className={styles.productCard}
+                      onClick={closeMenu}
+                    >
+                      <div className={styles.productImage}>
+                        <img src={product.image} alt={product.name} />
+                      </div>
+                      <div className={styles.productInfo}>
+                        <h3 className={styles.productName}>{product.name}</h3>
+                        <div className={styles.productActions}>
+                          <span className={`${styles.status} ${product.status === 'Coming soon' ? styles.comingSoon : ''}`}>
+                            {product.status}
+                          </span>
+                          {product.hasDocument && (
+                            <span className={styles.documentLink}>Document</span>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </li>
             <li className={location.pathname === '/contact' ? styles.active : ''}>
               <Link to="/contact" onClick={closeMenu}>Contact</Link>

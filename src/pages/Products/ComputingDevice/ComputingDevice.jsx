@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductShowcase from '../../../components/features/ProductShowcase/ProductShowcase';
 import TechSpecs from '../../../components/features/TechSpecs/TechSpecs';
+import Footer from '../../../components/common/Footer/Footer';
 import './ComputingDevice.module.css';
 
 const ComputingDevice = () => {
@@ -31,6 +32,7 @@ const ComputingDevice = () => {
                 description={productData.description} 
             />
             <TechSpecs specifications={productData.specifications} />
+            <Footer />
         </div>
     );
 };

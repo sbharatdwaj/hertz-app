@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Layout from '../../../components/common/Layout/Layout';
+import Footer from '../../../components/common/Footer/Footer';
 import styles from './Satellite.module.css';
 
 // Importing components
@@ -157,6 +158,7 @@ const Satellite = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </Layout>
   );
 };
