@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hertz-app/static/css/main.60e511bf.css",
-    "main.js": "/hertz-app/static/js/main.31aa8be3.js",
+    "main.css": "/hertz-app/static/css/main.e129b431.css",
+    "main.js": "/hertz-app/static/js/main.3153d595.js",
     "static/media/home_video.mp4": "/hertz-app/static/media/home_video.6bd348d32d69d5a37b9e.mp4",
     "static/media/satellite-hero.png": "/hertz-app/static/media/satellite-hero.ce49bebb90f28c0be0a7.png",
     "static/media/image3.png": "/hertz-app/static/media/image3.b5c7776ffcb9bd407105.png",
@@ -17,14 +17,14 @@
     "static/media/sensor-module.mp4": "/hertz-app/static/media/sensor-module.9f4edfd037fab5f7038c.mp4",
     "static/media/satellite.png": "/hertz-app/static/media/satellite.26b6e9c6358ad2145c5d.png",
     "static/media/main.png": "/hertz-app/static/media/main.db97f85723e7b9cffa72.png",
-    "static/media/contact-bg.svg": "/hertz-app/static/media/contact-bg.3c7d1192612b5b196511.svg",
-    "static/media/computing.svg": "/hertz-app/static/media/computing.315349fa69f3483b5ebce79e12a3293b.svg",
+    "static/media/contact-bg.svg": "/hertz-app/static/media/contact-bg.b40aef3c8e2938f9b630.svg",
+    "static/media/computing.svg": "/hertz-app/static/media/computing.f68c68119d7f3ba0125983a8e8daa832.svg",
     "index.html": "/hertz-app/index.html",
-    "main.60e511bf.css.map": "/hertz-app/static/css/main.60e511bf.css.map",
-    "main.31aa8be3.js.map": "/hertz-app/static/js/main.31aa8be3.js.map"
+    "main.e129b431.css.map": "/hertz-app/static/css/main.e129b431.css.map",
+    "main.3153d595.js.map": "/hertz-app/static/js/main.3153d595.js.map"
   },
   "entrypoints": [
-    "static/css/main.60e511bf.css",
-    "static/js/main.31aa8be3.js"
+    "static/css/main.e129b431.css",
+    "static/js/main.3153d595.js"
   ]
 }
